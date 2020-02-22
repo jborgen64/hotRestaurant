@@ -13,9 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const tables = [];
-const waitlist = [];
+const waiting = [];
 
-const guest = {
+const res = {
   customerName: '',
   phoneNumber: '',
   customerEmail: '',
@@ -30,6 +30,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.html'));
 });
 
+app.get('/main.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'main.html'));
+});
+
 app.get('/tables.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'tables.html'));
 });
@@ -40,16 +44,16 @@ app.get('/reservations.html', (req, res) => {
 
 
 app.get('/api/tables', (req, res) => {
-  return tables;
+  return res.json(tables);
 });
 
 app.get('/api/waitlist', (req, res) => {
-  return waitlist;
+  return res.json(waitlist)
 });
 
 app.post('/api/clear', (req, res) => {
   tables.empty();
-  return tables;
+  return res.json(clear);
 });
 
 app.post('/api/tables', (req, res) => {
@@ -57,11 +61,11 @@ app.post('/api/tables', (req, res) => {
   const data = req.body;
 
   if (tables.length < 6) {
-    guest.push(data);
+    res.push(data);
   }
 
   else {
-    waitlist.push(data);
+    waiting.push(data);
   }
 });
 
