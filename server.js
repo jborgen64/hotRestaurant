@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const tables = [];
-const waiting = [];
+const waitlist = [];
 
 const res = {
   customerName: '',
@@ -48,7 +48,7 @@ app.get('/api/tables', (req, res) => {
 });
 
 app.get('/api/waitlist', (req, res) => {
-  return res.json(waitlist)
+  return res.json(waitlist);
 });
 
 app.post('/api/clear', (req, res) => {
