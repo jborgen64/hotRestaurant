@@ -7,7 +7,7 @@ const res = {
   phoneNumber: '',
   customerEmail: '',
   customerID: '',
-}
+};
 
 const getTables = function () {
   return $.ajax({
