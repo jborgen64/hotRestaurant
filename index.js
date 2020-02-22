@@ -1,13 +1,12 @@
-
+//variables that will store data for tables and the wait list
 const tables = [];
 const waiting = [];
 
-const res = {
-  customerName: '',
-  phoneNumber: '',
-  customerEmail: '',
-  customerID: '',
-}
+
+$("#submit").on("click", function{
+    const
+    const res1 = new Reservation()
+})
 
 const getTables = function () {
   return $.ajax({
