@@ -57,16 +57,15 @@ app.post('/api/clear', (req, res) => {
 });
 
 app.post('/api/tables', (req, res) => {
-  res.sendFile(path.join(__dirname, 'tables.html'));
   const data = req.body;
-
+  
   if (tables.length < 6) {
     tables.push(data);
-  }
-
-  else {
+  }   else {
     waitlist.push(data);
   }
+
+  return res.json(data);
 });
 
 // Starts the server to begin listening
