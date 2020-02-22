@@ -30,12 +30,13 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.html'));
 });
 
-app.get("/add", function(req, res) {
-  res.sendFile(path.join(__dirname, "reservations.html"));
-});
 
 app.get('/api/tables', (req, res) => {
   return tables;
+});
+
+app.get('/api/waiting', (req, res) => {
+  return waiting;
 });
 
 app.post('/api/tables', (req, res) => {
@@ -47,7 +48,7 @@ app.post('/api/tables', (req, res) => {
   }
 
   else {
-    wating.push(data);
+    waiting.push(data);
   }
   
   
