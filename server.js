@@ -26,9 +26,22 @@ const res = {
 // =============================================================
 
 // Basic route that sends the user first to the AJAX Page
-app.get('/main.html', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.html'));
 });
+
+app.get('/.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'main.html'));
+});
+
+app.get('/tables.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'tables.html'));
+});
+
+app.get('/reservations.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'reservations.html'));
+});
+
 
 app.get('/api/tables', (req, res) => {
   return tables;
