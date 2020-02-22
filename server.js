@@ -47,8 +47,8 @@ app.get('/api/tables', (req, res) => {
   return tables;
 });
 
-app.get('/api/waiting', (req, res) => {
-  return waiting;
+app.get('/api/waitlist', (req, res) => {
+  return waitlist;
 });
 
 app.post('/api/clear', (req, res) => {
