@@ -2,15 +2,23 @@
 const tables = [];
 const waiting = [];
 
-
-$("#submit").on("click", function{
-    const
-    const res1 = new Reservation()
-})
+const res = {
+  customerName: '',
+  phoneNumber: '',
+  customerEmail: '',
+  customerID: '',
+};
 
 const getTables = function () {
   return $.ajax({
     url: '/api/tables',
+    method: 'GET',
+  });
+};
+
+const getWaiting = function () {
+  return $.ajax({
+    url: '/api/waiting',
     method: 'GET',
   });
 };
