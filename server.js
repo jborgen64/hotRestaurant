@@ -38,6 +38,11 @@ app.get('/api/waiting', (req, res) => {
   return waiting;
 });
 
+app.post('/api/clear', (req, res) => {
+  tables.empty;
+  return clear;
+});
+
 app.post('/api/tables', (req, res) => {
   res.sendFile(path.join(__dirname, 'tables.html'));
   const data = req.body;
