@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.html'));
 });
 
-app.get('/.html', (req, res) => {
+app.get('/main.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.html'));
 });
 
