@@ -16,6 +16,13 @@ const getTables = function () {
   });
 };
 
+const getWaiting = function () {
+  return $.ajax({
+    url: '/api/waiting',
+    method: 'GET',
+  });
+};
+
 // A function for saving a note to the db
 const saveRes = function (res) {
   return $.ajax({
