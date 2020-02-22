@@ -25,6 +25,10 @@ app.get('/tables.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'tables.html'));
 });
 
+app.get('/reservations.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'reservations.html'));
+});
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, () => {
