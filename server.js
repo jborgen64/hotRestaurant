@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const tables = [];
-const waiting = [];
+const waitlist = [];
 
 const res = {
   customerName: '',
@@ -65,7 +65,7 @@ app.post('/api/tables', (req, res) => {
   }
 
   else {
-    waiting.push(data);
+    waitlist.push(data);
   }
 });
 
