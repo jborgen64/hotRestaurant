@@ -48,7 +48,7 @@ app.get('/api/waitlist', (req, res) => {
 });
 
 app.post('/api/clear', (req, res) => {
-  tables.empty;
+  tables.empty();
   return clear;
 });
 
