@@ -21,6 +21,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.html'));
 });
 
+app.get('/tables', (req, res) => {
+  res.sendFile(path.join(__dirname, 'tables.html'));
+});
 
 // Starts the server to begin listening
 // =============================================================
