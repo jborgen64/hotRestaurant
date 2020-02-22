@@ -30,6 +30,15 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.html'));
 });
 
+app.get('/tables.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'tables.html'));
+});
+
+app.get('/reservations.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'reservations.html'));
+});
+
+
 app.get('/api/tables', (req, res) => {
   return tables;
 });
@@ -39,7 +48,7 @@ app.get('/api/waitlist', (req, res) => {
 });
 
 app.post('/api/clear', (req, res) => {
-  tables.empty;
+  tables.empty();
   return clear;
 });
 
