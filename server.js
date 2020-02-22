@@ -15,7 +15,7 @@ app.use(express.json());
 const tables = [];
 const waitlist = [];
 
-const res = {
+const guest = {
   customerName: '',
   phoneNumber: '',
   customerEmail: '',
@@ -53,7 +53,7 @@ app.get('/api/waitlist', (req, res) => {
 
 app.post('/api/clear', (req, res) => {
   tables.empty();
-  return clear;
+  return tables;
 });
 
 app.post('/api/tables', (req, res) => {
@@ -61,7 +61,7 @@ app.post('/api/tables', (req, res) => {
   const data = req.body;
 
   if (tables.length < 6) {
-    res.push(data);
+    guest.push(data);
   }
 
   else {
